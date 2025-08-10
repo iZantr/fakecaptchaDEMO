@@ -1,0 +1,134 @@
+<!-- i dont want to add ray id because its will to realistic  -->
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta http-equiv="refresh" content="360" />
+  <!-- This demo shows fake captcha with harmless payload made by iZantr 
+if you see this outside of github I advise you to leave
+I also forbid changing and modifying my code without my permission 
+especially using it for distributing malware
+this message will be duplicated several times in the code -->
+  <title>One moment...</title>
+  <style>
+    #verification-container {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+      opacity: 0;
+      transform: translateY(-20px);
+      display: none;
+    }
+    #verification-container.show {
+      opacity: 1;
+      transform: translateY(0);
+      display: block;
+    }
+    /* why i am using internal styles? */
+    /* gonna fix it in the next commit maybe. */
+  </style>
+
+  <!-- Link to external CSS, because inline styles are a mess (dont look at the top boy) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Cloudflare Turnstile JS  -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/b/8359bcf47b68/api.js?onload=Xwypo8&render=explicit" async defer crossorigin="anonymous"></script>
+
+  <script src="/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1?ray=96cfe4e09f87d0e8"></script>
+</head>
+
+<body>
+  <div class="main-wrapper" role="main">
+    <div class="main-content">
+      <h1 class="zone-name-title h1">just a demo with harmless payload.com</h1>
+      <p id="elDm5" class="h2 spacer-bottom">
+        <!-- cloudfare should probably change this text to something more creative -->
+        Verify you are human by completing the action below.
+      </p>
+
+
+      <iframe 
+        src="captcha.html" 
+        class="captcha-iframe" 
+        title="CAPTCHA"
+        id="captcha-frame"
+        style="width: 320px; height: 80px; border: none; overflow: hidden;"
+        scrolling="no"
+      ></iframe>
+
+      <div id="verification-container" style="display: none; margin-top: 10px;">
+        <iframe 
+          src="verification.html" 
+          style="width: 350px; height: 260px; border: 1px solid #ccc; border-radius: 4px; border-top: 4px solid #e57200;"
+        ></iframe>
+      </div>
+  <!-- This demo shows fake captcha with harmless payload made by iZantr 
+if you see this outside of github I advise you to leave
+I also forbid changing and modifying my code without my permission 
+especially using it for distributing malware
+this message will be duplicated several times in the code -->
+      <div id="RInW4" style="display: grid;">
+        <div>
+          <div>
+            <input type="hidden" name="cf-turnstile-response" id="cf-chl-widget-q1fzw_response" />
+          </div>
+        </div>
+      </div>
+
+      <!-- This is the spinning loader. -->
+      <div id="bNvc4" class="spacer loading-verifying" style="display: none; visibility: hidden;">
+        <div class="lds-ring">
+          <div></div><div></div><div></div><div></div>
+        </div>
+      </div>
+
+      <div id="ZEWft5" class="core-msg spacer spacer-top">
+        madeincsgo.com needs to review the security of your connection before proceeding.
+      </div>
+
+
+      <div id="DiaP1" style="display: none;">
+        <div id="challenge-success-text" class="h2">Verified</div>
+        <div class="core-msg spacer">Waiting for madeincsgo.com...</div>
+      </div>
+  <!-- This demo shows fake captcha with harmless payload made by iZantr 
+if you see this outside of github I advise you to leave
+I also forbid changing and modifying my code without my permission 
+especially using it for distributing malware
+this message will be duplicated several times in the code -->
+      <noscript>
+        <div class="h2">
+          <!-- For the 1% of users who have JavaScript disabled lol. -->
+          <span id="challenge-error-text">Enable JavaScript and cookies to continue</span>
+        </div>
+      </noscript>
+    </div>
+  </div>
+</body>
+<script>
+  //i dont wanna comment anymore 
+  window.addEventListener('message', function (event) {
+
+    if (event.data && event.data.type === 'show-verification') {
+      const container = document.getElementById('verification-container');
+      container.style.display = 'block';
+      // A little timeout to make the transition work
+      setTimeout(() => container.classList.add('show'), 10);
+    }
+    // if (event.data && event.data.type === 'verification-complete') {
+    //   const container = document.getElementById('verification-container');
+    //   container.classList.remove('show');
+    //   setTimeout(() => container.style.display = 'none', 300);
+    //   document.getElementById('DiaP1').style.display = 'block';
+    //   document.getElementById('bNvc4').style.display = 'none';
+    // }
+  });
+</script>
+</html>
+  <!-- This demo shows fake captcha with harmless payload made by iZantr 
+if you see this outside of github I advise you to leave
+I also forbid changing and modifying my code without my permission 
+especially using it for distributing malware
+this message will be duplicated several times in the code -->

